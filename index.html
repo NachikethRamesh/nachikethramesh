@@ -4,7 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Personal Portfolio">
+    <meta name="description" content="Nachiketh Ramesh - Product Manager & MBA Student">
+
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Nachiketh Ramesh - Portfolio">
+    <meta property="og:description" content="Product Manager & Strategy Consultant. MBA at Michigan Ross.">
+    <meta property="og:image" content="https://nachikethramesh.com/images/favicon.svg">
+    <meta property="og:url" content="https://nachikethramesh.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
     <title>Nachiketh Ramesh</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,13 +29,34 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button id="theme-toggle" class="msg-btn" aria-label="Toggle Dark Mode">
+                        <!-- Sun Icon -->
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <!-- Moon Icon -->
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                </li>
             </ul>
         </div>
     </nav>
 
     <!-- Home -->
-    <section id="home" class="section hero">
+    <section id="home" class="section hero reveal">
         <div class="container">
             <p class="hero-greeting">Hello, I'm</p>
             <h1 class="hero-title">Nachiketh Ramesh</h1>
@@ -46,12 +76,10 @@
     </section>
 
     <!-- Portfolio -->
-    <section id="portfolio" class="section">
+    <section id="portfolio" class="section reveal">
         <div class="container">
             <h2 class="section-title">Portfolio</h2>
-            <p class="hero-subtitle">While I believe that growth and learning is a constant process, it was paramount
-                for me to learn through practice.</p>
-            <p class="hero-subtitle">I reached out to my user base across Ann Arbor to discuss their needs and
+            <p class="hero-subtitle">I reached out to people across Ann Arbor to discuss their needs and
                 understand their reservations about existing products. Here
                 are some of the
                 products I have been working on.</p>
@@ -102,14 +130,50 @@
                 </div>
             </div>
 
+        </div>
+    </section>
 
-
-
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Product & Strategy</h3>
+                    <div class="skill-tags">
+                        <span>Product Management</span>
+                        <span>Strategy Consulting</span>
+                        <span>Business Transformation</span>
+                        <span>User Research</span>
+                        <span>Data Analysis</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Technical</h3>
+                    <div class="skill-tags">
+                        <span>JavaScript</span>
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>Python</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Tools</h3>
+                    <div class="skill-tags">
+                        <span>Figma</span>
+                        <span>Jira</span>
+                        <span>Tableau</span>
+                        <span>AWS</span>
+                        <span>Git</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="section">
+    <section id="contact" class="section reveal">
         <div class="container">
             <h2 class="section-title">Contact</h2>
             <p class="contact-text">Have a project in mind? Let's work together. Drop me a note!</p>

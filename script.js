@@ -25,7 +25,7 @@ const projectData = {
     mhustle: {
         title: "MHustle",
         subtitle: "Peer-to-Peer Gig Economy Platform (iOS App)",
-        description: "Protoype of an app for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
+        description: "Prototype of an app for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
         techStack: ["React", "Node.js", "ElasticSearch"],
         images: [
             "images/MHustle_Features.png"
@@ -36,7 +36,7 @@ const projectData = {
     airkitchen: {
         title: "AirKitchen",
         subtitle: "App to find authentic homecooked meals that remind you of your home.",
-        description: "Protoype of the idea for an app to find homecooked food near you. Features include ratings and reviews, payments, location based search, and recommendations.",
+        description: "Prototype of the idea for an app to find homecooked food near you. Features include ratings and reviews, payments, location based search, and recommendations.",
         techStack: ["JavaScript"],
         images: [
             "images/airkitchen_landing.png",
