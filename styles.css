@@ -7,6 +7,7 @@
     --bg-tertiary: #f5f5f5;
     --bg-modal: #ffffff;
     --bg-lightbox: rgba(255, 255, 255, 0.98);
+    --bg-nav: rgba(255, 255, 255, 0.8);
 
     --text-primary: #1a1a1a;
     --text-secondary: #666666;
@@ -35,6 +36,7 @@ body.dark-mode {
     --bg-tertiary: #334155;
     --bg-modal: #1e293b;
     --bg-lightbox: rgba(15, 23, 42, 0.98);
+    --bg-nav: rgba(15, 23, 42, 0.8);
 
     --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
@@ -91,7 +93,10 @@ ul {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--bg-primary);
+    background: var(--bg-nav);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    /* Safari support */
     border-bottom: 1px solid var(--border-light);
     z-index: 100;
     transition: background 0.3s ease, border-color 0.3s ease;
@@ -304,6 +309,25 @@ body.dark-mode .moon-icon {
     font-weight: 600;
     margin-bottom: 1rem;
     color: var(--text-primary);
+}
+
+.portfolio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.portfolio-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    background: var(--bg-primary);
+    /* Use primary bg to contrast with gray card */
+    border: 1px solid var(--border-light);
+    color: var(--text-secondary);
+    border-radius: 12px;
+    font-weight: 500;
 }
 
 .portfolio-item p {
