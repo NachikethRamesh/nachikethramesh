@@ -24,19 +24,17 @@ const projectData = {
     },
     mhustle: {
         title: "MHustle",
-        subtitle: "Productivity & Side Hustle App",
-        description: "An innovative application designed to help entrepreneurs and side hustlers manage their projects, track income, and stay organized. Features include task management, income tracking, and goal setting.",
-        techStack: ["React", "Firebase", "Tailwind CSS", "Chart.js"],
+        subtitle: "Peer-to-Peer Gig Economy Platform (iOS App)",
+        description: "App for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
+        techStack: ["React", "Node.js", "AWS", "Stripe API", "ElasticSearch", "PostgreSQL"],
         images: [
-            "https://images.unsplash.com/photo-1553729459-efe14ef6055d?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&h=400&fit=crop"
+            "images/MHustle_Features.png"
         ],
-        video: null,
-        liveLink: "#",
-        githubLink: "#"
+        video: "images/Demo_Seeker.mp4",
+        githubLink: "https://github.com/NachikethRamesh/MHustle"
     },
-    projectthree: {
-        title: "Project Three",
+    airkitchen: {
+        title: "AirKitchen",
         subtitle: "Coming Soon",
         description: "This exciting project is currently in development. Stay tuned for updates on this innovative solution that combines cutting-edge technology with user-centered design.",
         techStack: ["React", "Python", "AWS", "PostgreSQL"],
@@ -45,7 +43,7 @@ const projectData = {
             "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
         ],
         video: null,
-        liveLink: "#",
+        liveLink: "https://home-chef-connect--doncheetos.replit.app/",
         githubLink: "#"
     }
 };
@@ -72,7 +70,7 @@ function openModal(projectKey) {
 
     // Add video if exists
     if (project.video) {
-        mediaHTML += `<video controls src="${project.video}" poster=""></video>`;
+        mediaHTML += `<video src="${project.video}" poster="" muted playsinline></video>`;
     }
 
     modalContent.innerHTML = `
@@ -123,20 +121,35 @@ function openModal(projectKey) {
     // Initialize Lightbox Logic
     const lightbox = document.getElementById('modalLightbox');
     const lightboxImg = lightbox.querySelector('img');
-    const projectImages = modalContent.querySelectorAll('.modal-media-grid img');
+    const lightboxVideo = lightbox.querySelector('video');
+    const projectMedia = modalContent.querySelectorAll('.modal-media-grid img, .modal-media-grid video');
 
-    projectImages.forEach(img => {
-        img.addEventListener('click', (e) => {
-            e.stopPropagation(); // Prevent modal from closing if we have that logic (we don't but good practice)
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
+    projectMedia.forEach(media => {
+        media.addEventListener('click', (e) => {
+            e.stopPropagation();
+
             lightbox.classList.add('active');
+
+            if (media.tagName === 'IMG') {
+                lightboxImg.src = media.src;
+                lightboxImg.alt = media.alt;
+                lightboxImg.classList.add('show');
+                lightboxVideo.classList.remove('show');
+                lightboxVideo.pause();
+            } else if (media.tagName === 'VIDEO') {
+                lightboxVideo.src = media.src;
+                lightboxVideo.classList.add('show');
+                lightboxImg.classList.remove('show');
+                lightboxVideo.play();
+            }
         });
     });
 
     // Close lightbox on click
     lightbox.onclick = () => {
         lightbox.classList.remove('active');
+        lightboxVideo.pause();
+        lightboxVideo.currentTime = 0;
     };
 
     modalContent.scrollTop = 0;
@@ -150,7 +163,14 @@ function closeModal() {
     document.body.style.overflow = '';
     // Also ensure lightbox is closed
     const lightbox = document.getElementById('modalLightbox');
-    if (lightbox) lightbox.classList.remove('active');
+    if (lightbox) {
+        lightbox.classList.remove('active');
+        const video = lightbox.querySelector('video');
+        if (video) {
+            video.pause();
+            video.currentTime = 0;
+        }
+    }
 }
 
 // Event listeners for portfolio items
