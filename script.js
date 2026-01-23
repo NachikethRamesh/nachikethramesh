@@ -1,11 +1,36 @@
-// Smooth scroll for navigation
-document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        document.querySelector(link.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+
+
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+});
+
+
+// Scroll Reveal Animation
+const revealElements = document.querySelectorAll('.reveal');
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
     });
+}, {
+    threshold: 0.1
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
 });
 
 // Project data for modals
@@ -50,7 +75,6 @@ const projectData = {
 // Modal functionality
 const modal = document.getElementById('projectModal');
 const modalContent = document.getElementById('modalContent');
-const modalClose = document.getElementById('modalClose');
 const portfolioItems = document.querySelectorAll('.portfolio-item');
 
 // Open modal with project data
@@ -160,7 +184,6 @@ function openModal(projectKey) {
 function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    // Also ensure lightbox is closed
     const lightbox = document.getElementById('modalLightbox');
     if (lightbox) {
         lightbox.classList.remove('active');
@@ -181,8 +204,6 @@ portfolioItems.forEach(item => {
 });
 
 // Close modal events
-modalClose.addEventListener('click', closeModal);
-
 modal.addEventListener('click', (e) => {
     if (e.target === modal) {
         closeModal();
