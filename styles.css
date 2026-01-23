@@ -403,10 +403,13 @@ body.dark-mode .moon-icon {
 /* ===== Contact ===== */
 #contact {
     text-align: center;
-    min-height: 95vh;
+    min-height: 80vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    /* Ensures horizontal centering in flex column */
+    width: 100%;
 }
 
 .contact-text {
