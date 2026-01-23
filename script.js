@@ -26,7 +26,7 @@ const projectData = {
         title: "MHustle",
         subtitle: "Peer-to-Peer Gig Economy Platform (iOS App)",
         description: "Protoype of an app for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
-        techStack: ["React", "Node.js", "AWS", "Stripe API", "ElasticSearch", "PostgreSQL"],
+        techStack: ["React", "Node.js", "ElasticSearch"],
         images: [
             "images/MHustle_Features.png"
         ],
