@@ -737,9 +737,8 @@ svg {
     .section-title {
         font-size: 2rem;
     }
-}
 
-@media (max-width: 640px) {
+    /* Stack Nav on tablets/mobile */
     .nav-container {
         padding: 1rem;
         flex-direction: column;
@@ -747,10 +746,16 @@ svg {
     }
 
     .nav-links {
-        gap: 1.2rem;
-        font-size: 0.85rem;
+        gap: 1.5rem;
         width: 100%;
         justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-links {
+        gap: 1rem;
+        font-size: 0.85rem;
     }
 
     .section {
