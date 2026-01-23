@@ -215,3 +215,27 @@ document.addEventListener('keydown', (e) => {
         closeModal();
     }
 });
+
+// Active Navigation Highlight
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${id}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}, {
+    threshold: 0.3 // Trigger when 30% of section is visible
+});
+
+sections.forEach(section => {
+    navObserver.observe(section);
+});

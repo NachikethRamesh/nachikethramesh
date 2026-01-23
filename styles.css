@@ -129,8 +129,10 @@ ul {
     transition: color 0.2s;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--text-primary);
+    font-weight: 500;
 }
 
 /* Theme Toggle */
@@ -261,12 +263,14 @@ body.dark-mode .moon-icon {
     font-size: 1rem;
     font-weight: 500;
     cursor: pointer;
-    transition: background 0.2s, transform 0.2s, opacity 0.2s;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn:hover {
-    opacity: 0.9;
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.4);
 }
 
 /* ===== Portfolio ===== */
