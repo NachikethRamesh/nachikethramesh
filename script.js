@@ -25,7 +25,7 @@ const projectData = {
     mhustle: {
         title: "MHustle",
         subtitle: "Peer-to-Peer Gig Economy Platform (iOS App)",
-        description: "App for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
+        description: "Protoype of an app for UMich students to earn by sharing their skills to help other students in Ann Arbor. Features include inbuilt chat, user ratings, scheduling system, and secure payments.",
         techStack: ["React", "Node.js", "AWS", "Stripe API", "ElasticSearch", "PostgreSQL"],
         images: [
             "images/MHustle_Features.png"
@@ -35,16 +35,15 @@ const projectData = {
     },
     airkitchen: {
         title: "AirKitchen",
-        subtitle: "Coming Soon",
-        description: "This exciting project is currently in development. Stay tuned for updates on this innovative solution that combines cutting-edge technology with user-centered design.",
-        techStack: ["React", "Python", "AWS", "PostgreSQL"],
+        subtitle: "App to find authentic homecooked meals that remind you of your home.",
+        description: "Protoype of the idea for an app to find homecooked food near you. Features include ratings and reviews, payments, location based search, and recommendations.",
+        techStack: ["JavaScript"],
         images: [
-            "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=400&fit=crop",
-            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop"
+            "images/airkitchen_landing.png",
+            "images/airkitchen_explore.png"
         ],
         video: null,
         liveLink: "https://home-chef-connect--doncheetos.replit.app/",
-        githubLink: "#"
     }
 };
 
