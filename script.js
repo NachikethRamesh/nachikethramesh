@@ -10,8 +10,8 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 // Project data for modals
 const projectData = {
-    daveslinkshare: {
-        title: "Dave's Linkshare",
+    kurate: {
+        title: "Kurate",
         subtitle: "Link Management Platform",
         description: "A comprehensive link sharing and management platform that allows users to organize, share, and track their important links. Built with modern web technologies to provide a seamless user experience.",
         techStack: ["JavaScript", "Node.js", "MongoDB", "Express"],
@@ -63,14 +63,14 @@ function openModal(projectKey) {
     if (!project) return;
 
     let mediaHTML = '';
-    
+
     // Add images
     if (project.images && project.images.length > 0) {
         project.images.forEach(img => {
             mediaHTML += `<img src="${img}" alt="${project.title} screenshot" loading="lazy">`;
         });
     }
-    
+
     // Add video if exists
     if (project.video) {
         mediaHTML += `<video controls src="${project.video}" poster=""></video>`;
