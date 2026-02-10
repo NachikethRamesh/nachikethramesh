@@ -218,12 +218,17 @@ function closeModal() {
             video.currentTime = 0;
         }
     }
+    // Reset hash to portfolio section when closing a project modal
+    if (window.location.hash && projectData[window.location.hash.substring(1)]) {
+        history.pushState(null, '', '#portfolio');
+    }
 }
 
 // Event listeners for portfolio items
 portfolioItems.forEach(item => {
     item.addEventListener('click', () => {
         const projectKey = item.dataset.project;
+        history.pushState(null, '', `#${projectKey}`);
         openModal(projectKey);
     });
 });
@@ -264,3 +269,17 @@ const navObserver = new IntersectionObserver((entries) => {
 sections.forEach(section => {
     navObserver.observe(section);
 });
+
+// Open modal from URL hash (e.g. site/#kurate)
+function openModalFromHash() {
+    const hash = window.location.hash.substring(1);
+    if (hash && projectData[hash]) {
+        openModal(hash);
+    }
+}
+
+// Open on initial page load
+openModalFromHash();
+
+// Open when hash changes (e.g. browser back/forward)
+window.addEventListener('hashchange', openModalFromHash);
