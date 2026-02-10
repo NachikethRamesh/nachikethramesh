@@ -75,7 +75,7 @@ const projectData = {
         title: "AirKitchen",
         subtitle: "App to find authentic homecooked meals that remind you of your home.",
         description: "Prototype of the idea for an app to find homecooked food near you. Features include ratings and reviews, payments, location based search, and recommendations.",
-        techStack: ["JavaScript"],
+        techStack: ["Product Ideation", "Product Design", "Prototyping"],
         images: [
             "images/airkitchen_landing.png",
             "images/airkitchen_explore.png"
@@ -139,7 +139,7 @@ function openModal(projectKey) {
         ` : ''}
         
         <div class="modal-section">
-            <h3 class="modal-section-title">Technologies Used</h3>
+            <h3 class="modal-section-title">${projectKey === 'projectflow' || projectKey === 'airkitchen' ? 'Skills' : 'Technologies Used'}</h3>
             <div class="modal-tech-stack">
                 ${project.techStack.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
             </div>
