@@ -1,5 +1,18 @@
 
 
+// Copy Email to Clipboard
+function copyEmail(e) {
+    e.preventDefault();
+    const email = 'contact@nachikethramesh.com';
+    const emailText = document.getElementById('email-text');
+    navigator.clipboard.writeText(email).then(() => {
+        emailText.textContent = 'Copied to clipboard!';
+        setTimeout(() => {
+            emailText.textContent = email;
+        }, 2000);
+    });
+}
+
 // Theme Toggle Logic
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;
@@ -41,8 +54,8 @@ const projectData = {
         description: "A simple and easy to use content curation and management website that allows you to archive your favorite content from across the internet.",
         techStack: ["JavaScript", "Node.js", "Cloudflare D1 (SQLite)", "Express"],
         images: [
-            "images/kurate_dashboard.png",
-            "images/kurate_landing.png"
+"images/kurate_landing.png",
+            "images/kurate_dashboard.png"
         ],
         video: null,
         liveLink: "https://kurate.net",
@@ -69,6 +82,18 @@ const projectData = {
         ],
         video: null,
         liveLink: "https://home-chef-connect--doncheetos.replit.app/",
+    },
+    projectflow: {
+        title: "Flow Finance",
+        subtitle: "Ran a viral marketing campaign at Michigan Ross for Flow Finance iOS app developed by Arjun Mayur.",
+        description: "I executed a marketing stunt to create 1.2k impressions and 33% increase in downloads for Flow Finance. The app provides the easiest way to find finance news with concise, AI-generated summaries.",
+        techStack: ["Viral Marketing", "Growth Hacking", "Organic Growth"],
+        images: [
+            "images/Flow1.jpeg",
+            "images/Flow2.jpeg"
+        ],
+        video: null,
+        liveLink: "https://apps.apple.com/in/app/flow-fast-finance-news/id6751279102",
     }
 };
 
