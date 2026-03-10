@@ -24,6 +24,8 @@ import {
   ArrowDown
 } from 'lucide-react';
 
+const FEATURED_ON_ARTICLE_URL = "https://www.mlive.com/news/ann-arbor/2026/03/fed-up-with-dating-apps-2-university-of-michigan-students-made-a-friendship-platform-instead.html";
+
 const projects = [
   {
     title: "Kurate",
@@ -51,6 +53,8 @@ const projects = [
       { type: 'image', url: '/images/Squad2.png' }
     ],
     link: "https://squadxoxo.com",
+    modalArticleLabel: "MWire Article",
+    modalArticleLink: FEATURED_ON_ARTICLE_URL,
     github: "#",
     showCodeButton: false
   },
@@ -358,7 +362,7 @@ export default function App() {
                   <div className="pt-8 border-t border-white/5">
                     <span className="text-[12.5px] uppercase tracking-[0.3em] text-white/20 mb-3.5 block font-mono">Featured On</span>
                     <a 
-                      href="https://www.mlive.com/news/ann-arbor/2026/03/fed-up-with-dating-apps-2-university-of-michigan-students-made-a-friendship-platform-instead.html"
+                      href={FEATURED_ON_ARTICLE_URL}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center justify-between p-[18px] border border-white/5 rounded-xl hover:bg-white/[0.02] transition-all bg-white/[0.01]"
@@ -563,6 +567,17 @@ export default function App() {
                               >
                                 <ExternalLink className="w-4 h-4" />
                                 <span>{selectedProject.title === "Flow Finance" ? "Download App" : "Live Project"}</span>
+                              </a>
+                            )}
+                            {selectedProject.modalArticleLink && (
+                              <a 
+                                href={selectedProject.modalArticleLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-2 px-6 py-3 rounded-full border border-white/10 text-white text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors"
+                              >
+                                <ExternalLink className="w-4 h-4" />
+                                <span>{selectedProject.modalArticleLabel ?? "Article"}</span>
                               </a>
                             )}
                             {selectedProject.showCodeButton !== false && (
