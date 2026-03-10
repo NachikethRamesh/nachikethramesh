@@ -285,21 +285,21 @@ export default function App() {
 
       <main>
         {/* Hero Section */}
-        <section id="home" className="relative h-screen flex flex-col justify-center overflow-hidden px-6">
+        <section id="home" className="relative min-h-[100svh] lg:min-h-screen flex flex-col justify-center px-6 pt-28 pb-14 md:pt-32 md:pb-20 lg:py-0 overflow-x-clip">
           {/* Background Decorative Element */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none" />
 
           <div className="max-w-7xl mx-auto w-full relative z-10">
-            <div className="grid lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start lg:items-center">
               {/* Left Column: Name */}
               <div className="lg:col-span-7">
                 <motion.div
                   initial={{ opacity: 0, x: -30 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                  className="w-fit"
+                  className="w-full"
                 >
-                  <h1 className="text-[7.5vw] md:text-[6.8vw] lg:text-[5.5vw] font-light tracking-tighter leading-[0.9] mb-4 whitespace-nowrap">
+                  <h1 className="text-[10.1vw] sm:text-[8.8vw] md:text-[6.8vw] lg:text-[5.5vw] font-light tracking-tighter leading-[0.9] mb-4 whitespace-nowrap">
                     NACHIKETH <span className="text-white">RAMESH</span>
                   </h1>
 
@@ -373,7 +373,7 @@ export default function App() {
                           Fed up with dating apps? 2 U-M students made a friendship platform instead.
                         </h3>
                       </div>
-                      <ChevronRight className="w-[18px] h-[18px] text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                      <ChevronRight className="w-[18px] h-[18px] text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] group-active:text-[#39FF14] group-active:drop-shadow-[0_0_8px_#39FF14] group-focus-within:text-[#39FF14] group-focus-within:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                     </a>
                   </div>
                 </motion.div>
@@ -461,7 +461,7 @@ export default function App() {
                   <div className="flex items-start justify-between mb-12">
                     <div className="flex items-center space-x-4">
                       <span className="text-[10px] font-mono text-white/20">[{String(index + 1).padStart(2, '0')}]</span>
-                      <div className="p-3 rounded-xl bg-white/5 text-white/40 group-hover:text-[#39FF14] group-hover:bg-[#39FF14]/10 group-hover:drop-shadow-[0_0_8px_#39FF14] transition-all">
+                      <div className="p-3 rounded-xl bg-white/5 text-white/40 group-hover:text-[#39FF14] group-hover:bg-[#39FF14]/10 group-hover:drop-shadow-[0_0_8px_#39FF14] group-active:text-[#39FF14] group-active:bg-[#39FF14]/10 group-active:drop-shadow-[0_0_8px_#39FF14] group-focus-within:text-[#39FF14] group-focus-within:bg-[#39FF14]/10 group-focus-within:drop-shadow-[0_0_8px_#39FF14] transition-all">
                         {project.icon}
                       </div>
                     </div>
@@ -531,6 +531,45 @@ export default function App() {
                             </p>
                           </div>
 
+                          <div className="space-y-6 md:hidden">
+                            <span className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 block font-mono">Media Gallery</span>
+                            <div className="grid gap-4">
+                              {selectedProject.media.map((item, i) => (
+                                <button
+                                  key={i}
+                                  type="button"
+                                  onClick={() =>
+                                    setActiveMedia({
+                                      type: item.type as 'image' | 'video',
+                                      url: item.url,
+                                      alt: `${selectedProject.title} media ${i + 1}`,
+                                    })
+                                  }
+                                  className="rounded-xl overflow-hidden border border-white/5 bg-white/5 aspect-video flex items-center justify-center relative group cursor-zoom-in"
+                                  aria-label={`Open ${item.type} ${i + 1} for ${selectedProject.title}`}
+                                >
+                                  {item.type === 'image' ? (
+                                    <img 
+                                      src={item.url} 
+                                      alt={`${selectedProject.title} screenshot ${i + 1}`}
+                                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                                      referrerPolicy="no-referrer"
+                                    />
+                                  ) : (
+                                    <video 
+                                      muted
+                                      playsInline
+                                      preload="metadata"
+                                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                                    >
+                                      <source src={item.url} type="video/mp4" />
+                                    </video>
+                                  )}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
+
                           {Array.isArray(selectedProject.skills) && selectedProject.skills.length > 0 && (
                             <div>
                               <span className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 block font-mono">Skills Involved</span>
@@ -594,7 +633,7 @@ export default function App() {
                           </div>
                         </div>
 
-                        <div className="space-y-6">
+                        <div className="hidden md:block space-y-6">
                           <span className="text-[10px] uppercase tracking-[0.2em] text-white/30 mb-3 block font-mono">Media Gallery</span>
                           <div className="grid gap-4">
                             {selectedProject.media.map((item, i) => (
@@ -721,7 +760,7 @@ export default function App() {
                     <h3 className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold font-mono">
                       {category}
                     </h3>
-                    <div className="w-2 h-2 rounded-full bg-white/10 group-hover:bg-[#39FF14] group-hover:shadow-[0_0_10px_#39FF14] transition-all"></div>
+                    <div className="w-2 h-2 rounded-full bg-white/10 group-hover:bg-[#39FF14] group-hover:shadow-[0_0_10px_#39FF14] group-active:bg-[#39FF14] group-active:shadow-[0_0_10px_#39FF14] group-focus-within:bg-[#39FF14] group-focus-within:shadow-[0_0_10px_#39FF14] transition-all"></div>
                   </div>
                   
                   <div className="flex flex-wrap gap-x-6 gap-y-4">
@@ -761,7 +800,7 @@ export default function App() {
               <div className="p-8 md:p-12 border-b md:border-b-0 md:border-r border-white/10 hover:bg-white/[0.02] transition-all group">
                 <div className="flex items-center justify-between mb-12">
                   <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold font-mono">Direct Channel</span>
-                  <Mail className="w-4 h-4 text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                  <Mail className="w-4 h-4 text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] group-active:text-[#39FF14] group-active:drop-shadow-[0_0_8px_#39FF14] group-focus-within:text-[#39FF14] group-focus-within:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                 </div>
                 <button 
                   onClick={copyEmail}
@@ -790,7 +829,7 @@ export default function App() {
               <div className="p-8 md:p-12 hover:bg-white/[0.02] transition-all group">
                 <div className="flex items-center justify-between mb-12">
                   <span className="text-[10px] uppercase tracking-[0.3em] text-white/40 font-bold font-mono">Social Networks</span>
-                  <Globe className="w-4 h-4 text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                  <Globe className="w-4 h-4 text-white/20 group-hover:text-[#39FF14] group-hover:drop-shadow-[0_0_8px_#39FF14] group-active:text-[#39FF14] group-active:drop-shadow-[0_0_8px_#39FF14] group-focus-within:text-[#39FF14] group-focus-within:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <a 
@@ -800,10 +839,10 @@ export default function App() {
                     className="flex items-center justify-between p-4 border border-white/5 rounded-xl hover:border-white/20 hover:bg-white/5 transition-all group/link"
                   >
                     <div className="flex items-center space-x-3">
-                      <Linkedin className="w-5 h-5 text-white/40 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                      <Linkedin className="w-5 h-5 text-white/40 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] group-active/link:text-[#39FF14] group-active/link:drop-shadow-[0_0_8px_#39FF14] group-focus/link:text-[#39FF14] group-focus/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                       <span className="text-sm font-medium tracking-wide">LinkedIn</span>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                    <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] group-active/link:text-[#39FF14] group-active/link:drop-shadow-[0_0_8px_#39FF14] group-focus/link:text-[#39FF14] group-focus/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                   </a>
                   <a 
                     href="https://github.com/NachikethRamesh" 
@@ -812,10 +851,10 @@ export default function App() {
                     className="flex items-center justify-between p-4 border border-white/5 rounded-xl hover:border-white/20 hover:bg-white/5 transition-all group/link"
                   >
                     <div className="flex items-center space-x-3">
-                      <Github className="w-5 h-5 text-white/40 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                      <Github className="w-5 h-5 text-white/40 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] group-active/link:text-[#39FF14] group-active/link:drop-shadow-[0_0_8px_#39FF14] group-focus/link:text-[#39FF14] group-focus/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                       <span className="text-sm font-medium tracking-wide">GitHub</span>
                     </div>
-                    <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
+                    <ChevronRight className="w-4 h-4 text-white/20 group-hover/link:text-[#39FF14] group-hover/link:drop-shadow-[0_0_8px_#39FF14] group-active/link:text-[#39FF14] group-active/link:drop-shadow-[0_0_8px_#39FF14] group-focus/link:text-[#39FF14] group-focus/link:drop-shadow-[0_0_8px_#39FF14] transition-all" />
                   </a>
                 </div>
               </div>
