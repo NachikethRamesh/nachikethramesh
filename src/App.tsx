@@ -91,7 +91,7 @@ const projects = [
     technology: ["SwiftUI", "Cursor"],
     media: [
       { type: 'image', url: '/images/MHustle_Features.png' },
-      { type: 'video', url: '/images/Demo_Seeker.mp4' }
+      { type: 'video', url: '/images/Demo_Seeker_web.mp4' }
     ],
     github: "https://github.com/NachikethRamesh/MHustle",
     showLiveButton: false
@@ -605,12 +605,13 @@ export default function App() {
                                   />
                                 ) : (
                                   <video 
-                                    src={item.url} 
                                     muted
                                     playsInline
                                     preload="metadata"
                                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                                  />
+                                  >
+                                    <source src={item.url} type="video/mp4" />
+                                  </video>
                                 )}
                               </button>
                             ))}
@@ -654,11 +655,12 @@ export default function App() {
                               />
                             ) : (
                               <video
-                                src={activeMedia.url}
                                 controls
                                 autoPlay
                                 className="w-full h-full object-contain"
-                              />
+                              >
+                                <source src={activeMedia.url} type="video/mp4" />
+                              </video>
                             )}
                           </motion.div>
                         </motion.div>
