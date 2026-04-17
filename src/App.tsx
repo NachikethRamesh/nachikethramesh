@@ -118,8 +118,8 @@ const projects = [
 
 const skills = {
   "Product & Strategy": [
-    "Strategy Consulting",
-    "Business Transformation",
+    "Product Management",
+    "GTM Strategy",
     "Customer Research",
     "Market Analysis",
     "Data Analysis",
@@ -130,7 +130,7 @@ const skills = {
     "Growth Hacking"
   ],
   Technical: ["JavaScript", "Node.js", "Python", "SQL", "C#"],
-  Tools: ["Figma", "Jira", "PowerBI", "Git", "Antigravity", "Cursor", "Claude Code", "Replit"]
+  Tools: ["Figma", "Jira", "PowerBI", "Tableau", "Git", "Antigravity", "Cursor", "Claude Code", "Replit"]
 };
 
 const getProjectSlug = (title: string) =>
@@ -304,11 +304,7 @@ export default function App() {
                   </h1>
 
                   <div className="flex flex-wrap items-center justify-center gap-4">
-                    <span className="text-[15px] uppercase tracking-[0.2em] text-white/40 font-medium">Strategy Consultant</span>
-                    <div className="w-1 h-1 rounded-full bg-white/20"></div>
                     <span className="text-[15px] uppercase tracking-[0.2em] text-white/40 font-medium">Product Manager</span>
-                    <div className="w-1 h-1 rounded-full bg-white/20"></div>
-                    <span className="text-[15px] uppercase tracking-[0.2em] text-white/40 font-medium">GTM Engineer</span>
                   </div>
 
                   <div className="mt-6 flex flex-wrap items-center justify-center gap-5">
@@ -352,7 +348,7 @@ export default function App() {
                       Bridging the gap between <span className="text-white">complex business strategy</span> and <span className="text-white">human-centric technology</span>. 
                     </p>
                     <p className="text-[18px] text-white/40 leading-relaxed max-w-xl">
-                      MBA Candidate at Michigan Ross with 7 years of experience at EY, Deloitte, and BCG.
+                      MBA candidate at Michigan Ross with 5+ years of product experience.
                       <br />
                       Focused on building products to deliver real impact.
                     </p>
@@ -410,13 +406,13 @@ export default function App() {
                   I am a second year MBA student at Michigan Ross. I am passionate about delivering impact by working at the intersection of technology &amp; strategy.
                 </p>
                 <p className="text-base md:text-lg text-white/70 leading-relaxed">
-                  I have 7 years of experience in business transformation and strategy consulting at EY, Deloitte, and BCG. I have managed the ideation, design, development, and roll-out of 50+ enterprise-grade products.
+                  I have 5+ years of experience in Product roles. I also have management consulting experience with BCG. I have managed the ideation, design, development, and roll-out of 50+ enterprise-grade products.
                 </p>
                 <p className="text-base md:text-lg text-white/70 leading-relaxed">
-                  At Ross, product management classes and technology focused events such as "Tech-Innovation Jam" and "Dare to Dream" have helped me explore the consumer-facing aspects of product development: from running effective consumer interviews &amp; surveys, to consumer analytics for understanding user preferences, to consumer behavior strategies that improve user stickiness.
+                  At Ross, product management classes and technology focused events such as "Tech-Innovation Jam" and "Dare to Dream" have helped me explore B2C product development: from running effective consumer interviews &amp; surveys, to consumer analytics for understanding user preferences, to consumer behavior strategies that improve user stickiness.
                 </p>
                 <p className="text-base md:text-lg text-white/70 leading-relaxed">
-                  I have augmented these skills through deliberate practice, putting my product development and strategic thinking skills to use by creating productivity tools through vibe coding and by running marketing campaigns.
+                  I have augmented my skillset through deliberate practice, putting my product development and strategic thinking skills to use by creating productivity tools and social apps through agentic coding and by running marketing campaigns.
                 </p>
               </motion.div>
               </div>
@@ -433,7 +429,7 @@ export default function App() {
               </div>
               <div className="md:col-span-8 flex items-end">
                 <p className="text-white/40 text-sm max-w-md leading-relaxed font-mono uppercase tracking-wider">
-                  Exploring consumer-facing aspects of product development through deliberate practice and user-centric design.
+                  With experience in B2B product management, I have explored B2C product management by building the following products. My product management and development workflows are augmented by AI tools.
                 </p>
               </div>
             </div>
