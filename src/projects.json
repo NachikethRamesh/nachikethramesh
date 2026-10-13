@@ -1,0 +1,521 @@
+[
+  {
+    "slug": "tweet-index",
+    "title": "Tweet Index",
+    "summary": "Find the post you meant to come back to.",
+    "description": "A local search tool for saved X likes and bookmarks, with meaning-based retrieval and model-assisted ranking.",
+    "status": "Local tool",
+    "role": "Creator · built with Claude",
+    "technology": [
+      "Python",
+      "SQLite",
+      "local embeddings",
+      "model APIs"
+    ],
+    "skills": [],
+    "media": [],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/Tweet-Index"
+      }
+    ],
+    "accent": "#bce49b",
+    "steps": [],
+    "preview": "/social/tweet-index.jpg",
+    "sources": [],
+    "problem": "Saving is easy. Finding the right post months later is harder, especially when the useful idea is inside an image or a linked article.",
+    "approach": "Five stages—Capture, Store, Enrich, Index, and Search—turn saved posts into searchable results. SQLite and embeddings are local; model enrichment and reranking send relevant content to API providers. Linked pages and images are fetched during enrichment.",
+    "outcome": "The original recording shows one search run, including timing and cost. Its counts and measurements describe that recording, not guaranteed product performance."
+  },
+  {
+    "slug": "r2d2",
+    "title": "R2D2",
+    "summary": "Stay with the text. Go deeper.",
+    "description": "A native Windows reading assistant that turns highlighted text into explanations, simpler wording, definitions, and key takeaways.",
+    "status": "Windows assistant",
+    "role": "Creator",
+    "technology": [
+      "C#",
+      ".NET 8",
+      "WPF",
+      "model APIs"
+    ],
+    "skills": [],
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/r2d2-settings.png",
+        "caption": "Actual settings window from the R2D2 README."
+      },
+      {
+        "type": "image",
+        "url": "/images/r2d2-providers.png",
+        "caption": "Actual provider selector from the README; model availability can change."
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/R2D2"
+      },
+      {
+        "label": "Original LinkedIn post",
+        "url": "https://lnkd.in/p/g_tCJbwT"
+      }
+    ],
+    "accent": "#a8cbff",
+    "steps": [],
+    "preview": "/social/r2d2.jpg",
+    "sources": [
+      {
+        "label": "AssistantService.cs",
+        "url": "https://github.com/NachikethRamesh/R2D2/blob/HEAD/AssistantService.cs"
+      },
+      {
+        "label": "ModelProvider.cs",
+        "url": "https://github.com/NachikethRamesh/R2D2/blob/HEAD/ModelProvider.cs"
+      }
+    ],
+    "problem": "Switching away from a difficult passage interrupts reading. The assistant uses selected text as the context for a focused question.",
+    "approach": "The source implements a WPF sidebar and a provider catalog across three API formats. Selected text, the question, and recent conversation turns are sent to the selected provider. Keys are stored in Windows Credential Manager. The README says OpenAI has received the most testing; other provider paths are less exercised.",
+    "outcome": "The source code and settings screenshots document the workflow. OCR, visible conversation history, and a UI control for canceling an answer are not implemented in the inspected version."
+  },
+  {
+    "title": "Kurate",
+    "slug": "kurate",
+    "description": "An easy-to-use content curation website for saving your favorite content from across the internet, with recommendations based on RSS feeds.",
+    "summary": "A personal library for articles, videos, and podcasts, built with Claude Code.",
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/kurate_landing.png",
+        "caption": "Original Kurate landing page: a personal library for articles, videos, and podcasts."
+      },
+      {
+        "type": "image",
+        "url": "/images/kurate_dashboard.png",
+        "caption": "Original Kurate dashboard: reading states, categories, a saved-content list, and the Add Link panel."
+      }
+    ],
+    "links": [
+      {
+        "label": "Visit project",
+        "url": "https://kurate.net"
+      }
+    ],
+    "skills": [
+      "Customer interviews",
+      "Product marketing",
+      "Customer analytics"
+    ],
+    "technology": [
+      "React",
+      "Node.js",
+      "Cloudflare D1 (SQLite)",
+      "React Native / Expo (iOS + Android)",
+      "Claude Code + Codex"
+    ],
+    "status": "Web & mobile product",
+    "role": "Creator · product & development",
+    "accent": "#efbd90",
+    "problem": "People save articles, videos, and podcasts across the web, then lose the thread. Kurate brings that material into a personal library.",
+    "approach": "The existing portfolio documents React, Node.js, Cloudflare D1 storage, and React Native / Expo mobile work. RSS feeds support content recommendations.",
+    "outcome": "The supplied screenshots show the landing experience and a curated library; no usage or retention results are supplied.",
+    "steps": [
+      {
+        "label": "Save",
+        "title": "Bring content into one place.",
+        "text": "The dashboard’s Add Link panel is the entry point for a URL. Articles, videos, and podcasts share the same library.",
+        "media": 1
+      },
+      {
+        "label": "Organize",
+        "title": "Give the library a shape.",
+        "text": "The left sidebar separates reading states and categories. The screenshot shows how a growing list becomes easier to browse.",
+        "media": 1
+      },
+      {
+        "label": "Rediscover",
+        "title": "Come back with a purpose.",
+        "text": "A curated list and recommended reading make returning to saved content part of the experience.",
+        "media": 1
+      }
+    ],
+    "preview": "/social/kurate.jpg",
+    "sources": [
+      {
+        "label": "Original portfolio source",
+        "url": "https://github.com/NachikethRamesh/nachikethramesh/blob/391f85cd3782c0a79fa8af14927de73f68c860ec/src/App.tsx"
+      }
+    ]
+  },
+  {
+    "title": "Squadxoxo",
+    "slug": "squadxoxo",
+    "description": "A website and iOS app that help University of Michigan students make new friends. Groups are formed around user preferences and refresh every Thursday at 10:30 AM, with built-in chat to keep the conversation going.",
+    "summary": "A social app for University of Michigan students, with new friendship groups each week. Built with Claude Code.",
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/Squad1.png",
+        "caption": "Original Squadxoxo landing page, introducing weekly friendship groups at the University of Michigan."
+      },
+      {
+        "type": "image",
+        "url": "/images/Squad2.png",
+        "caption": "Original Squadxoxo dashboard, with preference settings and the next group drop."
+      }
+    ],
+    "links": [
+      {
+        "label": "Visit project",
+        "url": "https://squadxoxo.com"
+      },
+      {
+        "label": "MLive article",
+        "url": "https://www.mlive.com/news/ann-arbor/2026/03/fed-up-with-dating-apps-2-university-of-michigan-students-made-a-friendship-platform-instead.html"
+      }
+    ],
+    "skills": [
+      "Customer validation calls",
+      "Rapid prototyping",
+      "Viral marketing"
+    ],
+    "technology": [
+      "React + Vite",
+      "Node.js",
+      "Google OAuth 2.0 API",
+      "Claude Code"
+    ],
+    "status": "Web & iOS product",
+    "role": "Co-creator · product & growth",
+    "accent": "#e8b5d1",
+    "problem": "University of Michigan students need an easier way to meet new friends beyond their existing circles.",
+    "approach": "The portfolio describes preference-based groups, new groups every Thursday at 10:30 AM, and built-in chat. React + Vite, Node.js, and Google OAuth are listed in the original entry.",
+    "outcome": "The linked MLive article covers the friendship platform. No adoption or retention metric is claimed.",
+    "steps": [
+      {
+        "label": "Join",
+        "title": "Start with a shared campus.",
+        "text": "The landing page introduces a friendship app for University of Michigan students.",
+        "media": 0
+      },
+      {
+        "label": "Preferences",
+        "title": "Find common ground.",
+        "text": "Students set preferences used to form groups. The dashboard includes a Change Preferences entry.",
+        "media": 1
+      },
+      {
+        "label": "Weekly groups",
+        "title": "A reason to return each Thursday.",
+        "text": "The existing description specifies a new group drop every Thursday at 10:30 AM.",
+        "media": 1
+      },
+      {
+        "label": "Chat",
+        "title": "Turn a match into a conversation.",
+        "text": "The portfolio describes built-in chat. This step explains that flow; the screenshot shows the dashboard rather than a chat conversation.",
+        "media": 1
+      }
+    ],
+    "preview": "/social/squadxoxo.jpg",
+    "sources": [
+      {
+        "label": "Original portfolio source",
+        "url": "https://github.com/NachikethRamesh/nachikethramesh/blob/391f85cd3782c0a79fa8af14927de73f68c860ec/src/App.tsx"
+      }
+    ]
+  },
+  {
+    "slug": "ai-paper-skill",
+    "title": "AI-paper explanation skill",
+    "summary": "From a dense paper to an idea you can use.",
+    "description": "A Claude Code skill that turns AI research papers into interactive HTML lessons with analogies, workflows, annotated code, plain-English math, and quizzes.",
+    "status": "Claude Code skill",
+    "role": "Creator",
+    "technology": [
+      "Markdown",
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
+    "skills": [],
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/paper-example-1.png",
+        "caption": "Actual lesson output from the ai-paper-skill README — Attention Is All You Need, view 1."
+      },
+      {
+        "type": "image",
+        "url": "/images/paper-example-2.png",
+        "caption": "Actual lesson output from the ai-paper-skill README — Attention Is All You Need, view 2."
+      },
+      {
+        "type": "image",
+        "url": "/images/paper-example-3.png",
+        "caption": "Actual lesson output from the ai-paper-skill README — Attention Is All You Need, view 3."
+      },
+      {
+        "type": "image",
+        "url": "/images/paper-example-4.png",
+        "caption": "Actual lesson output from the ai-paper-skill README — Attention Is All You Need, view 4."
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/ai-paper-skill"
+      },
+      {
+        "label": "Original LinkedIn post",
+        "url": "https://lnkd.in/p/gkiw5bpx"
+      }
+    ],
+    "accent": "#f0d19d",
+    "steps": [],
+    "preview": "/social/ai-paper-skill.jpg",
+    "sources": [
+      {
+        "label": "SKILL.md",
+        "url": "https://github.com/NachikethRamesh/ai-paper-skill/blob/HEAD/SKILL.md"
+      },
+      {
+        "label": "Inspiration: Zara Zhang's codebase-to-course",
+        "url": "https://github.com/zarazhangrui/codebase-to-course"
+      }
+    ],
+    "problem": "Readers want to understand the ideas behind AI papers without losing the detail inside equations, architecture diagrams, and terminology.",
+    "approach": "The skill guides a coding assistant to analyze a paper and produce a self-contained HTML lesson. Teaching patterns include analogies, annotated code, equation explanations, and scenario-based quizzes. Inspired by Zara Zhang’s codebase-to-course skill, as credited in the original LinkedIn post; this project specializes in research papers.",
+    "outcome": "The README includes example output for Attention Is All You Need. The interactive lesson on this page was written for the portfolio to illustrate the skill’s teaching patterns; it was not generated by running the skill."
+  },
+  {
+    "slug": "commandvoice",
+    "title": "CommandVoice",
+    "summary": "Speak a thought. Keep your workflow.",
+    "description": "A Python desktop core for hotkey-triggered recording, faster-whisper transcription, clipboard delivery, and optional pasting into the active window.",
+    "status": "Desktop tool · public Python core",
+    "role": "Creator",
+    "technology": [
+      "Python",
+      "faster-whisper",
+      "keyboard",
+      "clipboard"
+    ],
+    "skills": [],
+    "media": [],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/CommandVoice"
+      }
+    ],
+    "accent": "#98d9d9",
+    "steps": [],
+    "preview": "/social/commandvoice.jpg",
+    "sources": [
+      {
+        "label": "app.py",
+        "url": "https://github.com/NachikethRamesh/CommandVoice/blob/HEAD/commandvoice/app.py"
+      },
+      {
+        "label": "transcriber.py",
+        "url": "https://github.com/NachikethRamesh/CommandVoice/blob/HEAD/commandvoice/transcriber.py"
+      },
+      {
+        "label": "model_selector.py",
+        "url": "https://github.com/NachikethRamesh/CommandVoice/blob/HEAD/commandvoice/model_selector.py"
+      }
+    ],
+    "problem": "Typing can interrupt the flow of a thought. A desktop dictation tool can turn speech into text where the user is already working.",
+    "approach": "The public source registers start and stop hotkeys, records audio, runs faster-whisper locally, and copies the transcript before optionally synthesizing a paste. Automatic model selection chooses base or large-v3 according to hardware. Model files may be downloaded; the inspected transcription path does not call a hosted speech API.",
+    "outcome": "The public repository exposes a console-driven Python core. Its README mentions an independent Electron UI, but the UI and installers are not included. The illustration represents the verified core workflow, not a screenshot of that UI."
+  },
+  {
+    "slug": "orbit-prm",
+    "title": "Orbit PRM",
+    "summary": "Remember the conversation. Make the next one count.",
+    "description": "A professional relationship manager for contact ingestion, conversation summaries, relationship warmth, enrichment, and follow-up reminders.",
+    "status": "Locally hosted application",
+    "role": "Creator",
+    "technology": [
+      "Next.js",
+      "TypeScript",
+      "SQLite",
+      "Google APIs",
+      "OpenAI",
+      "Exa"
+    ],
+    "skills": [],
+    "media": [],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/Orbit_ProfessionalRelationshipManager"
+      },
+      {
+        "label": "Original LinkedIn post",
+        "url": "https://lnkd.in/p/gzX7EmdX"
+      }
+    ],
+    "accent": "#c5b4ff",
+    "steps": [],
+    "preview": "/social/orbit-prm.jpg",
+    "sources": [
+      {
+        "label": "warmth.service.ts",
+        "url": "https://github.com/NachikethRamesh/Orbit_ProfessionalRelationshipManager/blob/HEAD/src/services/warmth.service.ts"
+      },
+      {
+        "label": "summarizer.service.ts",
+        "url": "https://github.com/NachikethRamesh/Orbit_ProfessionalRelationshipManager/blob/HEAD/src/services/summarizer.service.ts"
+      },
+      {
+        "label": "exa.service.ts",
+        "url": "https://github.com/NachikethRamesh/Orbit_ProfessionalRelationshipManager/blob/HEAD/src/services/exa.service.ts"
+      }
+    ],
+    "problem": "Professional relationships span email, meetings, and long gaps. Remembering the context and the next commitment becomes its own job.",
+    "approach": "The code stores records in local SQLite, syncs with Google services, and sends interaction content to OpenAI for summaries. Enrichment sends contact identifiers to Exa and uses OpenAI for extraction and optional web search. Local storage does not mean all processing stays on the device.",
+    "outcome": "The public source implements ingestion, summaries, warmth scoring, enrichment, and reminders. This case study uses fictional contacts only; no private database or correspondence is included."
+  },
+  {
+    "title": "Flow Finance",
+    "slug": "flow-finance",
+    "description": "I executed a campus marketing stunt at Michigan Ross for Flow Finance, an iOS app developed by Arjun Mayur. The campaign reported 1,200 impressions and a 33% increase in downloads. The app provides financial news with concise, AI-generated summaries.",
+    "summary": "A Michigan Ross growth campaign for Flow Finance, with a reported 33% increase in downloads.",
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/Flow1.jpeg",
+        "caption": "Original campaign photograph at Michigan Ross; app developed by Arjun Mayur."
+      },
+      {
+        "type": "image",
+        "url": "/images/Flow2.jpeg",
+        "caption": "Original photograph of the in-person Flow Finance marketing stunt."
+      }
+    ],
+    "links": [
+      {
+        "label": "Original App Store listing (currently unavailable)",
+        "url": "https://apps.apple.com/in/app/flow-fast-finance-news/id6751279102"
+      }
+    ],
+    "skills": [
+      "Viral marketing",
+      "Growth hacking",
+      "Customer analytics"
+    ],
+    "technology": [],
+    "status": "Marketing campaign",
+    "role": "Campaign contributor · marketing execution",
+    "accent": "#edc49c",
+    "problem": "A finance-news app needed awareness and downloads among a relevant student audience at Michigan Ross.",
+    "approach": "I executed a campus marketing stunt for Flow Finance. Arjun Mayur developed the iOS app; my contribution was the campaign, not app development.",
+    "outcome": "The original portfolio reports 1,200 impressions and a 33% increase in downloads. These are my reported campaign figures; the supporting analytics, baseline, and measurement period are not included in this case study.",
+    "steps": [
+      {
+        "label": "Problem",
+        "title": "Make the product visible.",
+        "text": "Introduce concise, AI-generated financial news summaries to a Michigan Ross audience.",
+        "media": 0
+      },
+      {
+        "label": "Execution",
+        "title": "Put the campaign in the room.",
+        "text": "The original photographs document the in-person marketing stunt. My contribution was executing the campaign activity.",
+        "media": 1
+      },
+      {
+        "label": "Reported results",
+        "title": "Connect attention to downloads.",
+        "text": "The portfolio reports 1,200 impressions and a 33% increase in downloads. These are self-reported results, not an independently audited attribution study.",
+        "media": 1
+      }
+    ],
+    "preview": "/social/flow-finance.jpg",
+    "sources": [
+      {
+        "label": "Original portfolio source",
+        "url": "https://github.com/NachikethRamesh/nachikethramesh/blob/391f85cd3782c0a79fa8af14927de73f68c860ec/src/App.tsx"
+      }
+    ]
+  },
+  {
+    "title": "LinkedIn Attribution System",
+    "slug": "linkedin-attribution-system",
+    "description": "An attribution prototype that helps go-to-market and sales teams interpret engagement with LinkedIn posts and prioritize follow-up actions. Built with Codex.",
+    "summary": "A campaign attribution prototype for go-to-market teams running LinkedIn programs.",
+    "media": [
+      {
+        "type": "image",
+        "url": "/images/LAS_2.png",
+        "caption": "Original attribution prototype dashboard for engagement and account context."
+      },
+      {
+        "type": "image",
+        "url": "/images/LAS_1.png",
+        "caption": "Original workflow diagram: engagement data, account mapping, intent, and pipeline paths."
+      }
+    ],
+    "links": [
+      {
+        "label": "GitHub",
+        "url": "https://github.com/NachikethRamesh/LinkedIn-Engagement-Attribution-System"
+      }
+    ],
+    "skills": [
+      "GTM engineering",
+      "Product roadmap creation"
+    ],
+    "technology": [
+      "React + Vite",
+      "Python",
+      "LinkedIn API, Exa API, OpenAI API",
+      "Codex",
+      "PostgreSQL"
+    ],
+    "status": "Attribution prototype",
+    "role": "Creator · GTM engineering",
+    "accent": "#a4caff",
+    "problem": "GTM and sales teams need to connect LinkedIn engagement to account context and useful next actions.",
+    "approach": "The repository documents ingestion, enrichment, scoring, account mapping, and next-best actions. The portfolio lists React + Vite, Python, LinkedIn, Exa, and OpenAI APIs. Engagement signals support prioritization; they do not prove causation. The public README identifies PostgreSQL storage and mock/CSV ingestion alongside an API scaffold; it does not establish a production LinkedIn integration.",
+    "outcome": "Screenshots and a workflow diagram are available. No revenue lift or conversion result is established.",
+    "steps": [
+      {
+        "label": "Engagement",
+        "title": "Start with a signal.",
+        "text": "Example: Avery at Fictional Labs comments on a launch post. A comment is evidence of engagement, not a purchase.",
+        "media": 0
+      },
+      {
+        "label": "Account context",
+        "title": "Connect the signal to a company.",
+        "text": "Example: Fictional Labs is mapped to an account and enriched with role context. This is fixed fictional data.",
+        "media": 1
+      },
+      {
+        "label": "Intent",
+        "title": "Interpret with care.",
+        "text": "Example: a question about implementation suggests interest. A human still needs to assess fit and intent.",
+        "media": 1
+      },
+      {
+        "label": "Follow-up",
+        "title": "Choose the next action.",
+        "text": "Example: send a useful resource and ask whether it addresses the question. No message is sent by this demo.",
+        "media": 1
+      }
+    ],
+    "preview": "/social/linkedin-attribution-system.jpg",
+    "sources": [
+      {
+        "label": "Original portfolio source",
+        "url": "https://github.com/NachikethRamesh/nachikethramesh/blob/391f85cd3782c0a79fa8af14927de73f68c860ec/src/App.tsx"
+      }
+    ]
+  }
+]

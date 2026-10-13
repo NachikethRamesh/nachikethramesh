@@ -1,3 +1,5 @@
 name = "nachikethramesh"
+# Run npm run build before publishing. Each /projects/<slug>/ has its own
+# prerendered index.html; do not rewrite all project routes to the homepage.
 pages_build_output_dir = "dist"
 compatibility_date = "2024-01-21"

@@ -1,0 +1,19 @@
+WEBVTT
+
+00:00.000 --> 00:05.000
+Tweet Index loads a local library of 5,956 saved posts.
+
+00:05.000 --> 00:10.000
+The help menu lists search, update and navigation commands.
+
+00:10.000 --> 00:13.000
+A search for Claude Code retrieves and reranks candidates.
+
+00:13.000 --> 00:21.000
+Ranked posts include summaries and relevance signals.
+
+00:21.000 --> 00:27.000
+This run displays its time and model-call cost.
+
+00:27.000 --> 00:42.000
+Return to an original post on X to read the full context.

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:focus-visible{outline:2px solid #c4e6ae;outline-offset:5px}
+section[id]{scroll-margin-top:88px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
 @layer utilities {
   .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
